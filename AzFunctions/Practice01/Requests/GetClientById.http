@@ -1,0 +1,5 @@
+### LOCAL
+GET http://localhost:7071/api/customers/555
+
+### PROD
+GET https://pruebas-az-exam204-fn-practice01-gzfrg3fyc7e4bbhw.brazilsouth-01.azurewebsites.net/api/customers/454?code={Replace_WIth_FunctionKey}
