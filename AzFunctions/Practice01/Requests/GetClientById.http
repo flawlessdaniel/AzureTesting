@@ -2,4 +2,17 @@
 GET http://localhost:7071/api/customers/555
 
 ### PROD
-GET https://pruebas-az-exam204-fn-practice01-gzfrg3fyc7e4bbhw.brazilsouth-01.azurewebsites.net/api/customers/454?code={Replace_WIth_FunctionKey}
+GET https://az-exam204-practice01-test-agauaubcekfzaeeb.brazilsouth-01.azurewebsites.net/api/customers/343?code={YOUR_CODE_HERE}
+
+### PROD CLIENT CRED FLOW - ENTRA ID AUTH
+POST https://login.microsoftonline.com/{TENANT_ID}/oauth2/v2.0/token
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=client_credentials
+&client_id={YOUR_CLIENT}
+&client_secret={YOUR_SECRET}
+&scope=api://{YOUR_CLIENT}/.default
+
+### PROD + ENTRA ID AUTH
+GET https://pruebas-az-exam204-fntest1-csdzevh0g7f5a4fv.brazilsouth-01.azurewebsites.net/api/customers/444?code={YOUR_CODE_HERE}
+Authorization: Bearer {YOUR_JWT_HERE}

@@ -1,0 +1,14 @@
+GET http://localhost:7071/api/TestEntraIDAuth
+
+### PROD CLIENT CRED FLOW - ENTRA ID AUTH
+POST https://login.microsoftonline.com/{TENANT_ID}/oauth2/v2.0/token
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=client_credentials
+&client_id={YOUR_CLIENT}
+&client_secret={YOUR_SECRET}
+&scope=api://{YOUR_CLIENT}/.default
+
+### PROD + ENTRA ID AUTH
+GET https://pruebas-az-exam204-fntest1-csdzevh0g7f5a4fv.brazilsouth-01.azurewebsites.net/api/TestEntraIDAuth
+Authorization: Bearer {YOUR_JWT}

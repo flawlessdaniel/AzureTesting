@@ -1,6 +1,4 @@
 using System.Net;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
 using Microsoft.Extensions.Logging;
@@ -18,7 +16,10 @@ public class GetClientById
 
     [Function("GetClientById")]
     public HttpResponseData Run(
-        [HttpTrigger(AuthorizationLevel.Function, "get", Route = "customers/{id}")] HttpRequestData req,
+        [HttpTrigger(
+            AuthorizationLevel.Function,
+            "get",
+            Route = "customers/{id}")] HttpRequestData req,
         string id)
     {
         _logger.LogInformation("C# HTTP trigger function processed a request.");
